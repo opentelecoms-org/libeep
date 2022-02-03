@@ -1,0 +1,29 @@
+Source: libeep
+Section: libs
+Priority: optional
+Maintainer: Daniel Pocock <daniel@pocock.pro>
+Build-Depends: debhelper (>= 10),
+ build-essential,
+ cmake,
+ libgstreamer-plugins-base1.0-dev
+Standards-Version: 4.0.0
+
+Package: libeep1
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ gstreamer1.0-plugins-base
+Description: Library for HEP EEP communication with HOMER
+ Client library used by applications submitting session data to the HOMER
+ monitoring system.
+
+Package: libeep-dev
+Architecture: any
+Section: libdevel
+Depends: libeep1 (= ${binary:Version})
+Description: Library for HEP EEP communication with HOMER (headers)
+ Client library used by applications submitting session data to the HOMER
+ monitoring system.
+ .
+ This package contains the headers required for developers.
+
